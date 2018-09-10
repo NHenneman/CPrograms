@@ -1,0 +1,7 @@
+﻿  BasicRoutines.cpp
+d:\sandbox\github\cprograms\graphics projects\project 0\3d square\3d square\vgl.h(13): warning C4005: 'GLEW_STATIC': macro redefinition
+  d:\sandbox\github\cprograms\graphics projects\project 0\3d square\3d square\vgl.h(13): note: command-line arguments:  see previous definition of 'GLEW_STATIC'
+d:\sandbox\github\cprograms\graphics projects\project 0\3d square\3d square\basicroutines.cpp(126): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
+d:\sandbox\github\cprograms\graphics projects\project 0\3d square\3d square\basicroutines.cpp(126): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+glew32sd.lib(glew.obj) : warning LNK4099: PDB 'glew_static.pdb' was not found with 'glew32sd.lib(glew.obj)' or at 'D:\Sandbox\GitHub\CPrograms\Graphics Projects\Project 0\3D Square\Debug\glew_static.pdb'; linking object as if no debug info
+  3D Square.vcxproj -> D:\Sandbox\GitHub\CPrograms\Graphics Projects\Project 0\3D Square\Debug\3D Square.exe
