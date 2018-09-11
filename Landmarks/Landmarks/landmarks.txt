@@ -1,0 +1,21 @@
+Eiffel Tower
+48 51 29.6 N
+2 17 40.2 E
+Great Pyramid of Giza
+29 58 45.03 N
+31 08 3.69 E
+Chichen Itza
+20 40 59 N
+88 34 7 W
+Machu Picchu
+13 09 48 S
+72 32 44 W
+Uluru
+25 20 42 S
+131 02 10 E
+Vinson Massif
+78 31 31.74 S
+85 37 1.73 W
+Taj Mahal
+27 10 30 N
+78 2 31 E
