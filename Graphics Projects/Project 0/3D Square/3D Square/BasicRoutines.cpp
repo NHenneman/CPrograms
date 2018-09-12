@@ -39,7 +39,7 @@ GLuint buildProgram(string vertexShaderName, string fragmentShaderName);
 int glutStartUp(int & argCount, char *argValues[],
 	string windowTitle = "No Title", int width = 500, int height = 500);
 void setAttributes(float lineWidth = 1.0, GLenum face = GL_FRONT_AND_BACK,
-	GLenum fill = GL_FILL);
+	GLenum fill = GLU_FILL);
 void buildObjects();
 void getLocations();
 void init(string vertexShader, string fragmentShader);
@@ -113,16 +113,43 @@ void setAttributes(float lineWidth, GLenum face, GLenum fill) {
 */
 
 void buildObjects() {
-	GLfloat vertices[] = { -0.5, -0.5, -0.5, 1.0,   // Triangle 1
-		-0.5,  0.5, -0.5, 1.0,
-		-0.5,  0.5,  0.5, 1.0,
-		-0.5, -0.5, -0.5, 1.0,  // Triangle 2
-		-0.5,  0.5,  0.5, 1.0,
-		-0.5, -0.5,  0.5, 1.0,
-	};
+	GLfloat vertices[] = {	-0.5, -0.5,  0.5, 1.0,   // Triangle 1  --Side 1
+							-0.5, -0.5, -0.5, 1.0,
+							-0.5,  0.5,  0.5, 1.0,
+							-0.5,  0.5, -0.5, 1.0,   // Triangle 2
+							-0.5, -0.5, -0.5, 1.0,
+							-0.5,  0.5,  0.5, 1.0,
 
-	GLfloat colors[] = { 1.00, 0.00, 0.00, 1.00,   1.00, 0.00, 0.00, 1.00,  1.00, 0.00, 0.00, 1.00, // Triangle 1 -- RED
-		0.00, 0.24, 1.00, 1.00,   0.00, 0.24, 1.00, 1.00,  0.00, 0.24, 1.00, 1.00, // Triangle 3 -- Blue
+							 0.5,  0.5,  0.5, 1.0,   // Triangle 3  --Side 2
+							 0.5,  0.5, -0.5, 1.0,
+							 0.5, -0.5, -0.5, 1.0,
+							 0.5,  0.5,  0.5, 1.0,   // Triangle 4
+							 0.5, -0.5,  0.5, 1.0,
+							 0.5, -0.5, -0.5, 1.0,
+
+							 0.5, -0.5,  0.5, 1.0,   // Triangle 5  --Side 3
+							-0.5,  0.5,  0.5, 1.0,
+							-0.5, -0.5,  0.5, 1.0,
+							 0.5, -0.5,  0.5, 1.0,   // Triangle 6
+							-0.5,  0.5,  0.5, 1.0,
+							 0.5,  0.5,  0.5, 1.0,
+
+							 0.5, -0.5, -0.5, 1.0,   // Triangle 7  -Side 4
+							 0.5,  0.5, -0.5, 1.0,
+							-0.5, -0.5, -0.5, 1.0,
+							 0.5,  0.5, -0.5, 1.0,   // Triangle 8
+							-0.5,  0.5, -0.5, 1.0,
+							-0.5, -0.5, -0.5, 1.0,
+	};
+	
+GLfloat colors[] = {	1.00, 1.00, 1.00, 1.00,   1.00, 1.00, 1.00, 1.00,  1.00, 1.00, 1.00, 1.00, // Triangle 1 -- WHITE
+						0.00, 1.00, 0.00, 1.00,   0.00, 1.00, 0.00, 1.00,  0.00, 1.00, 0.00, 1.00, // Triangle 2 -- GREEN
+						1.00, 1.00, 0.00, 1.00,   1.00, 1.00, 0.00, 1.00,  1.00, 1.00, 0.00, 1.00, // Triangle 3 -- YELLOW
+						1.00, 0.00, 0.00, 1.00,   1.00, 0.00, 0.00, 1.00,  1.00, 0.00, 0.00, 1.00, // Triangle 4 -- RED
+						0.00, 0.00, 0.00, 1.00,   0.00, 0.00, 0.00, 1.00,  0.00, 0.00, 0.00, 1.00, // Triangle 5 -- BLACK
+						0.00, 0.24, 1.00, 1.00,   0.00, 0.24, 1.00, 1.00,  0.00, 0.24, 1.00, 1.00, // Triangle 6 -- Blue
+						0.00, 1.00, 1.00, 1.00,   0.00, 1.00, 1.00, 1.00,  0.00, 1.00, 1.00, 1.00, // Triangle 7 -- CYAN
+						1.00, 0.00, 1.00, 1.00,   1.00, 0.00, 1.00, 1.00,  1.00, 0.00, 1.00, 1.00, // Triangle 8 -- MAGENTA
 	};
 
 	float vertexColors[] = {
@@ -133,6 +160,12 @@ void buildObjects() {
 	GLfloat normals[] = {
 		-1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,  // Triangle 1
 		-1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,  // Triangle 2
+		-1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,  // Triangle 3
+		-1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,  // Triangle 4
+		-1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,  // Triangle 5
+		-1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,  // Triangle 6
+		-1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,  // Triangle 7
+		-1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,    -1.0, 0.0, 0.0,  // Triangle 8
 	};
 
 
@@ -148,7 +181,7 @@ void buildObjects() {
 	/*
 	* Test code for internal object.
 	*/
-	nbrTriangles = 2;
+	nbrTriangles = 8;
 	glGenBuffers(1, &(arrayBuffers[0]));
 	glBindBuffer(GL_ARRAY_BUFFER, arrayBuffers[0]);
 	glBufferData(GL_ARRAY_BUFFER,
@@ -173,6 +206,13 @@ void buildObjects() {
 	glEnableVertexAttribArray(vNormal);
 	glVertexAttribPointer(vNormal, 3, GL_FLOAT, GL_FALSE, 0,
 		BUFFER_OFFSET(nbrTriangles * 12 * sizeof(float)));
+
+	// Enable depth test
+	glEnable(GL_DEPTH_TEST);
+	// Accept fragment if it closer to the camera than the former one
+	glDepthFunc(GL_LESS);
+
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 /*

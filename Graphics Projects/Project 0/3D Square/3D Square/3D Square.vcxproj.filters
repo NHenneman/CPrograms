@@ -18,10 +18,10 @@
     <ClInclude Include="LoadShaders.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header.h">
+    <ClInclude Include="vmath.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vmath.h">
+    <ClInclude Include="vgl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
