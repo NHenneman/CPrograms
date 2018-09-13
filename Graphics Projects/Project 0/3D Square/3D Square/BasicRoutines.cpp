@@ -115,9 +115,9 @@ void setAttributes(float lineWidth, GLenum face, GLenum fill) {
 void buildObjects() {
 	GLfloat vertices[] = {	-0.5, -0.5,  0.5, 1.0,   // Triangle 1  --Side 1
 							-0.5, -0.5, -0.5, 1.0,
-							-0.5,  0.5,  0.5, 1.0,
+							-0.5,  0.5, -0.5, 1.0,
 							-0.5,  0.5, -0.5, 1.0,   // Triangle 2
-							-0.5, -0.5, -0.5, 1.0,
+							-0.5, -0.5,  0.5, 1.0,
 							-0.5,  0.5,  0.5, 1.0,
 
 							 0.5,  0.5,  0.5, 1.0,   // Triangle 3  --Side 2
