@@ -1,0 +1,9 @@
+﻿  LoadShaders.cpp
+d:\sandbox\github\cprograms\graphics projects\practice\element draw\element draw\loadshaders.cpp(10): warning C4005: 'GLEW_STATIC': macro redefinition
+  d:\sandbox\github\cprograms\graphics projects\practice\element draw\element draw\loadshaders.cpp(10): note: command-line arguments:  see previous definition of 'GLEW_STATIC'
+  BasicRoutines.cpp
+d:\sandbox\github\cprograms\graphics projects\practice\element draw\element draw\vgl.h(13): warning C4005: 'GLEW_STATIC': macro redefinition
+  d:\sandbox\github\cprograms\graphics projects\practice\element draw\element draw\vgl.h(13): note: command-line arguments:  see previous definition of 'GLEW_STATIC'
+  Generating Code...
+glew32sd.lib(glew.obj) : warning LNK4099: PDB 'glew_static.pdb' was not found with 'glew32sd.lib(glew.obj)' or at 'D:\Sandbox\GitHub\CPrograms\Graphics Projects\Practice\Element Draw\Debug\glew_static.pdb'; linking object as if no debug info
+  Element Draw.vcxproj -> D:\Sandbox\GitHub\CPrograms\Graphics Projects\Practice\Element Draw\Debug\Element Draw.exe
