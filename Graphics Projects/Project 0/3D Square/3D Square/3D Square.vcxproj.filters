@@ -26,10 +26,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BasicRoutines.cpp">
+    <ClCompile Include="LoadShaders.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LoadShaders.cpp">
+    <ClCompile Include="BasicRoutines_VertexColors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

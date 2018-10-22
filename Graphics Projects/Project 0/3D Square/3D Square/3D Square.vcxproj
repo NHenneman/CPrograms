@@ -128,7 +128,7 @@
     <ClInclude Include="vmath.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BasicRoutines.cpp" />
+    <ClCompile Include="BasicRoutines_VertexColors.cpp" />
     <ClCompile Include="LoadShaders.cpp" />
   </ItemGroup>
   <ItemGroup>
