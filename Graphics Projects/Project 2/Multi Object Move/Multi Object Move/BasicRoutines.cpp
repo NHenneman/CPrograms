@@ -363,10 +363,9 @@ void timer(int value) {
 void display() {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);	// needed
-	//vmath::mat4 rotate = vmath::rotate(rotationAngle, 1.0f, (0.5f * (2 * cos(time) + cos(2 * time))), (0.5f * (2 * sin(time) - sin(2 * time))));
 	vmath::mat4 rotate = vmath::rotate(rotationAngle, 0.0f, 1.0f, 0.0f);
-	vmath::mat4 translate = vmath::translate(-2.0f, 0.0f, 0.0f);
-	vmath::mat4 scale = vmath::scale(0.25f, 0.25f, 0.25f);
+	vmath::mat4 translate = vmath::translate(-1.0f, 0.0f, 0.0f);
+	vmath::mat4 scale = vmath::scale(0.5f, 0.5f, 0.5f);
 	//vmath::mat4 scale = ortho(-100.0f, 100.0f, -1.0f, 1.0f, -1.0f, 1.0f);
 	vmath::mat4 currentMatrix = translate.transpose() * rotate * scale;
 	glUniformMatrix4fv(locationMap["modelingTransform"], 1, GL_TRUE,
@@ -381,9 +380,9 @@ void display() {
 		GL_UNSIGNED_SHORT,
 		NULL);
 
-	rotate = vmath::rotate(rotationAngle * -1, 0.0f, 1.0f, 0.0f);
-	translate = vmath::translate(0.0f, 0.0f, 0.0f);
-	scale = vmath::scale(0.25f, 0.25f, 0.25f);
+	rotate = vmath::rotate(rotationAngle, 0.0f, 1.0f, 0.0f);
+	translate = vmath::translate(1.0f, -1.0f, 0.0f);
+	scale = vmath::scale(0.5f, 0.5f, 0.5f);
 	//vmath::mat4 scale = ortho(-100.0f, 100.0f, -1.0f, 1.0f, -1.0f, 1.0f);
 	currentMatrix = translate.transpose() * rotate * scale;
 	glUniformMatrix4fv(locationMap["modelingTransform"], 1, GL_TRUE,

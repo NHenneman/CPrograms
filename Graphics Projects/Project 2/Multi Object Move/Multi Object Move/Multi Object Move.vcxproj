@@ -127,7 +127,6 @@
   <ItemGroup>
     <ClCompile Include="BasicRoutines.cpp" />
     <ClCompile Include="LoadShaders.cpp" />
-    <ClCompile Include="ReadFile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LoadShaders.h" />
