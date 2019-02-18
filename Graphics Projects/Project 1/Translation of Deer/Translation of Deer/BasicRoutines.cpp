@@ -264,9 +264,8 @@ void init(string vertexShader, string fragmentShader) {
 */
 void timer(int value) {
 	rotationAngle += 1.0f;
-	time += 0.005f;
-	if (time >= (6.28))
-		time -= 6.28;
+	time += 0.03f;
+	
 	if (rotationAngle >= 360.0)
 		rotationAngle -= 360.0;
 	glutPostRedisplay();
@@ -279,11 +278,11 @@ void timer(int value) {
 void display() {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);	// needed
-	vmath::mat4 rotate = vmath::rotate(rotationAngle, 1.0f, (0.5f * (2 * cos(time) + cos(2 * time))), (0.5f * (2 * sin(time) - sin(2 * time))));
-	vmath::mat4 translate = vmath::translate(0.0f, 0.0f, 0.0f);
+	vmath::mat4 rotate = vmath::rotate(rotationAngle, 0.0f, 1.0f, 0.0f);
+	vmath::mat4 translate = vmath::translate(0.0f, sin(time), cos(time));
 	vmath::mat4 scale = vmath::scale(0.25f, 0.25f, 0.25f);
 	//vmath::mat4 scale = ortho(-100.0f, 100.0f, -1.0f, 1.0f, -1.0f, 1.0f);
-	vmath::mat4 currentMatrix = scale * rotate * translate;
+	vmath::mat4 currentMatrix = translate.transpose() * rotate * scale;
 	glUniformMatrix4fv(locationMap["modelingTransform"], 1, GL_TRUE,
 		currentMatrix);
 
