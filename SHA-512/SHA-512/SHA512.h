@@ -1,10 +1,18 @@
 #ifndef __SHA256_H__
 #define __SHA256_H__
 
+//Function Prototypes
+long long Sigma0(long long input);
+long long Sigma1(long long input);
+long long RotateRight(long long bitstring, int value);
+long long Summation0(long long input);
+long long Summation1(long long input);
+long long Ch(long long inputA, long long inputB, long long inputC);
+long long Maj(long long inputA, long long inputB, long long inputC);
 
 unsigned long long initialHash[8] = { 
-	0x6a09e667f3bcc908, 0xbb67ae8584caa73b, 0x3c6ef372fe94f82b, 0xa54ff53a6f1d36f1,
-	0x510e527fade682d1, 0x9b05688c2b3e6c1f, 0x1f83d9abfb41bd6b, 0x5b30cd19137e2179
+	0x6a09e667f3bcc908, 0xbb67ae8584caa73b, 0x3c6ef372fe94f82b, 0xa54ff53a5f1d36f1,
+	0x510e527fade682d1, 0x9b05688c2b3e6c1f, 0x1f83d9abfb41bd6b, 0x5be0cd19137e2179
 };
 
 unsigned long long constants[] = {
@@ -29,5 +37,47 @@ unsigned long long constants[] = {
 	0x28db77f523047d84, 0x32caab7b40c72493, 0x3c9ebe0a15c9bebc, 0x431d67c49c100d4c,
 	0x4cc5d4becb3e42b6, 0x597f299cfc657e2a, 0x5fcb6fab3ad6faec, 0x6c44198c4a475817
 };
+
+//Returns the sigma subscript 0 function defined in SHA-512 standards
+long long Sigma0(long long input)
+{
+	return(RotateRight(input, 1) ^ RotateRight(input, 8) ^ input >> 7);
+}
+
+//Returns the sigma subscript 1 function defined in SHA-512 standards
+long long Sigma1(long long input)
+{
+	return(RotateRight(input, 19) ^ RotateRight(input, 61) ^ input >> 6);
+}
+
+//Returns the rotation right of a input bitstring by the number of bits in value
+long long RotateRight(long long bitstring, int value)
+{
+	return (bitstring >> value) | (bitstring << (64 - value));
+}
+
+//Returns the sum 0 - 512 function deined defined in SHA-512 standards
+long long Summation0(long long input)
+{
+	return(RotateRight(input, 28) ^ RotateRight(input, 34) ^ RotateRight(input, 39));
+}
+
+//Returns the sum 1 - 512 function deined defined in SHA-512 standards
+long long Summation1(long long input)
+{
+	return(RotateRight(input, 14) ^ RotateRight(input, 18) ^ RotateRight(input, 41));
+}
+
+//Returns result of function as defined in SHA-512 standards
+long long Ch(long long inputA, long long inputB, long long inputC)
+{
+	return((inputA & inputB) ^ (~inputA & inputC));
+}
+
+//Returns result of function as defined in SHA-512 standards 
+long long Maj(long long inputA, long long inputB, long long inputC)
+{
+	return((inputA & inputB) ^ (inputA & inputC) ^ (inputB & inputC));
+}
 
 #endif
