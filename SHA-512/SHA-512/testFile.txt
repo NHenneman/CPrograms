@@ -1,1 +1,5 @@
-I am using the following code to read in a file, 1024 bytes at a time. The issue I am having is the last portion of the file is not being read and written to my output file. I am guessing that is because it does not completely fill the 1024 byte size but not sure if this is correct. I am not sure how to change the loop to calculate the last size if that is the problem. Thanks in advanced for any help or suggestions.
+I am using the following code to read in a file, 1024 bytes at a time.
+The issue I am having is the last portion of the file is not being read and written to my output file.
+I am guessing that is because it does not completely fill the 1024 byte size but not sure if this is correct.
+I am not sure how to change the loop to calculate the last size if that is the problem.
+Thanks in advanced for any help or suggestions.
